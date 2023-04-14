@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <span id="counter">Total click: 0</span>
+        <button id="btn">Click</button>
+    </body>
+    <script>
+        let count = 0;
+        const button = document.querySelector("#btn");
+        function handleClick(){
+            const counter = document.querySelector("#counter");
+            
+            count++;
+            counter.innerText = `Total click: ${count}`;
+
+        }
+        button.addEventListener("click",handleClick);
+
+    </script>
+
+</html>

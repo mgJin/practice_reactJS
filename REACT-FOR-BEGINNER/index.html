@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
     <body>
-     
+        <div id="root"></div>
     </body>
     <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
-    <script>
-        const counterspan = React.createElement("span");//변수 이름은 맘대로지만 createElement에는 제대로 된 태그가 들어가야함
+    <script src="https://unpkg.com/@babel/standalone@7.21.4/babel.min.js"></script>
+
+    <script type="text/babel">
+        const root = document.getElementById("root");
+        let count = 0;
+        function countUp(){
+            count = count +1;
+            render();
+        }
+        function render(){
+            ReactDOM.render(<Container/>,root);
+        }
+        const Container =()=> (
+            <div>
+                <h3>
+                   Total clicks: {count}
+                </h3>
+                <button
+                    onClick={countUp}
+                >
+                    Click me
+                </button>
+            </div>
+        );
+        render();
         
     </script>
 </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <div id="root"></div>
+    </body>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.21.4/babel.min.js"></script>
+
+    <script type="text/babel">
+        const root = document.getElementById("root");
+        const Title =()=> (
+            <h3 
+                id="title"
+                onMouseEnter={ ()=>console.log("mouse enter")} >
+                Hello I'm a Title
+            </h3>
+        );
+        //함수 형식으로 만들어줘야 컨테이너에서 사용가능
+        const Button =()=> (
+            <button 
+                style=
+                    {{backgroundColor:"tomato"}}
+                onClick={()=>console.log("imclicked")}>
+                Click me
+            </button>
+        );
+
+        /*위에 것은 사실밑에것 하고 같은것
+        const Button = function Button(){
+          return (
+            <button 
+                style=
+                    {{backgroundColor:"tomato"}}
+                onClick={()=>console.log("imclicked")}>
+                Click me
+            </button>
+          );
+        }
+        */
+
+        const Container =()=> (
+            <div>
+                <Title/> 
+                <Button/>
+            </div>
+        );
+        ReactDOM.render(<Container/>,root);
+        
+    </script>
+</html>

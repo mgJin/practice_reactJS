@@ -84,10 +84,12 @@
            };
             return( 
             <div>
-                <input value={convert?len/CONVERT_CONST:len} type="number" placeholder="Miles" onChange={onChange} disabled={convert===true}></input>    
-                <input value={convert?len:len*CONVERT_CONST} type="number" placeholder="Km" onChange={onChange} disabled={convert===false}></input>  
+                <label htmlFor="Mile">Miles</label>
+                <input id="Mile"value={convert?len/CONVERT_CONST:len} type="number" placeholder="Miles" onChange={onChange} disabled={convert===true}></input>    
+                <label htmlFor="Km">Km</label>
+                <input id="Km"value={convert?len:len*CONVERT_CONST} type="number" placeholder="Km" onChange={onChange} disabled={convert===false}></input>  
                 <button onClick={reset}>reset</button>
-                <button onClick={convert_btn}>convert</button>
+                <button onClick={convert_btn}>{convert?"Miles->Km":"Km->Miles"}</button>
             </div>
             
             )

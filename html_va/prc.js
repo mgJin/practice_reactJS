@@ -4,6 +4,7 @@ function a(){
 a(function c(){
     console.log("ll");
 })
+/**굳 */
 function x(p){
     먼저실행하고픈함수();
     p();
